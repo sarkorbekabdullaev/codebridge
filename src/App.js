@@ -1,11 +1,14 @@
-import Card from "./components/card/card";
-import "./Home/home.sass";
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home/home";
+import ArticlePage from "./components/article-page/article-page";
 function App() {
   return (
-    <div className="App">
-      <Card />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="news/:id" element={<ArticlePage />} />
+      </Routes>
+    </Router>
   );
 }
 
